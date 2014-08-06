@@ -1,5 +1,6 @@
+
 <div class="box">
-  <div class="box-heading red-head"><?php echo $heading_title; ?></div>
+  <div class="box-heading red-head"><?php echo "<a  class='a_special' href='http://sk42.ru/index.php?route=product/special&path=0'>" . 'ВСЕ АКЦИИ' . '</a>'; ?></div>
   <div class="box-content">
     <div id="carousel-product-special">
 			<ul class="jcarousel-skin-product">
@@ -14,10 +15,14 @@
 								<a href="<?php echo $product['href']; ?>"><?php echo $product['reviews']; ?></a>
 							</div>
 						</div>
+						 
 						
-						<?php if ($product['thumb']) { ?>
-						<div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
-						<?php } ?>
+						<div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php if ($product['thumb']) echo $product['thumb']; else  echo '/image/no_image.jpg';?>" alt="<?php echo $product['name']; ?>" /></a></div>
+						
+						
+										
+
+
 						<div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
 						<?php if ($product['price']) { ?>
 						<div class="price">
@@ -29,7 +34,7 @@
 						</div>
 						<?php } ?>
 						
-						<div class="cart">
+						<div class="special_cart">
 							<input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="module-button" />
 							<div class="wishlist">
 								<a onclick="addToWishList('<?php echo $product['product_id']; ?>');" title="<?php echo $button_wishlist; ?>"></a>

@@ -6,6 +6,7 @@
    <li><a href="<?php echo $item3_href; ?>"><?php echo $item3[$lang_id]['name']; ?></a></li>
    <li><a href="<?php echo $item4_href; ?>"><?php echo $item4[$lang_id]['name']; ?></a></li>
    <li><a href="<?php echo $item5_href; ?>"><?php echo $item5[$lang_id]['name']; ?></a></li>
+   <li><a class="callme_viewform" href="<?php echo '#'; ?>"><?php echo 'Перезвоните мне!'; ?></a></li>
   </ul>
  </div>
  <div class="social_block">

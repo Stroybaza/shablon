@@ -103,7 +103,7 @@
   <label for="newsletter"><?php echo $entry_newsletter; ?></label>
   <br />
   <?php if ($shipping_required) { ?>
-  <input type="checkbox" name="shipping_address" value="1" id="shipping" checked="checked" />
+  <input type="checkbox" name="shipping_address" value="0" id="shipping" checked="checked" />
   <label for="shipping"><?php echo $entry_shipping; ?></label>
   <br />
   <?php } ?>

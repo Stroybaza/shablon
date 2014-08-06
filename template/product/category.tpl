@@ -6,7 +6,9 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
+  <!--
   <h1><?php echo $heading_title; ?></h1>
+  -->
   <?php if ($thumb || $description) { ?>
   <div class="category-info">
     <?php if ($thumb) { ?>
@@ -19,14 +21,42 @@
   <?php } ?>
 	</div>
   <?php if ($categories) { ?>
-	<div class="container-content">
-  <div class="category-list">
-	<h1><?php echo $text_refine; ?></h1>
+	<div style="background: #faf6d9!important" class="container-content" style="margin:0px 0px 0px 100px; ">
+		  <div class="category-list" style="margin:0px 0px 0px 35px; ">
+	<!-- <h1><?php //echo $text_refine; ?></h1> -->
+    <?php if (count($categories) <= 5) { ?>
     <ul>
       <?php foreach ($categories as $category) { ?>
-      <li><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>"><span><?php echo $category['name']; ?></a></span></li>
+      <li>
+          <a href="<?php echo $category['href']; ?>">
+              <span>
+              <?php
+                //echo ($category['name']);
+                echo $this->wrapText($category['name']);
+              ?>
+
+
+          </span></a></li>
       <?php } ?>
     </ul>
+    <?php } else { ?>
+    <?php for ($i = 0; $i < count($categories);) { ?>
+    <ul>
+      <?php $j = $i + ceil(count($categories) / 1); ?>
+      <?php for (; $i < $j; $i++) { ?>
+      <?php if (isset($categories[$i])) { ?>
+      <li><a href="<?php echo $categories[$i]['href']; ?>">
+                  <span>
+              <?php //echo $categories[$i]['name']; ?>
+              <?php echo $this->wrapText($categories[$i]['name']); ?>
+
+              </span>
+          </a></li>
+      <?php } ?>
+      <?php } ?>
+    </ul>
+    <?php } ?>
+    <?php } ?>
   </div>
 	</div>
   <?php } ?>

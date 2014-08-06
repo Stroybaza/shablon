@@ -153,12 +153,16 @@
 }
 .jcarousel-skin-product li .rating-line {
 	display: block;
+	/*Kogan*/
+	display: none;
 	margin: 0 10px;
 	height: 30px;
 }
 .jcarousel-skin-product li .rating-line .rating {
 	display: block;
 	float: left;
+	/*Kogan*/
+	display: none;
 }
 .jcarousel-skin-product li .rating-line .otzivi {
 	display: block;

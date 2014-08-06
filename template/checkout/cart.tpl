@@ -172,10 +172,7 @@
           <td><select name="zone_id">
             </select></td>
         </tr>
-        <tr>
-          <td><span id="postcode-required" class="required">*</span> <?php echo $entry_postcode; ?></td>
-          <td><input type="text" name="postcode" value="<?php echo $postcode; ?>" /></td>
-        </tr>
+        
       </table>
       <input type="button" value="<?php echo $button_quote; ?>" id="button-quote" class="button" />
     </div>

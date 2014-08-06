@@ -1,5 +1,5 @@
-<div class="box">
-  <div class="box-heading red-head"><?php echo $heading_title; ?></div>
+<div class="box1">
+  <div class="box-heading1 red-head1"><?php echo $heading_title; ?></div>
   <div class="box-content category-content">
     <ul class="box-category">
       <?php foreach ($categories as $category) { ?>

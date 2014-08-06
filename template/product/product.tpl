@@ -24,10 +24,21 @@
     <?php } ?>
     <div class="right">
 			<div class="description">
+
         <?php if ($manufacturer) { ?>
         <span><?php echo $text_manufacturer; ?></span> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
         <?php } ?>
         <span><?php echo $text_model; ?></span> <span class="model"><?php echo $model; ?></span><br />
+  <!--//kogan +-->
+    <?php echo $text_weight; ?>  <?php echo $weight; ?> <br>
+    <?php echo $text_dimension; ?> 
+	<?php 
+	if(!empty($length) && !empty($width) && !empty($height)) 
+			echo $length . " x " . $width . " x " . $height;
+	?>
+    <br>
+<!--//kogan +-->
+        
         <?php if ($reward) { ?>
         <span><?php echo $text_reward; ?></span> <b><?php echo $reward; ?></b><br />
         <?php } ?>
@@ -206,7 +217,7 @@
       <?php } ?>
       <div class="cart">
         <div><?php echo $text_qty; ?>
-          <input type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />
+          <input type="text" name="quantity" size="5" value="<?php echo $minimum; ?>" />
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
           &nbsp;
           <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button" />
@@ -245,6 +256,7 @@
   <?php if ($attribute_groups) { ?>
   <div id="tab-attribute" class="tab-content">
     <table class="attribute">
+
       <?php foreach ($attribute_groups as $attribute_group) { ?>
       <thead>
         <tr>
@@ -365,13 +377,49 @@ $('#button-cart').bind('click', function() {
 			
 			if (json['success']) {
 				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
-					
+
 				$('.success').fadeIn('slow');
 					
 				$('#cart-total').html(json['total']);
-				
-				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
-			}	
+
+
+
+/* kogan */
+
+                     var image = $('#image').offset();
+                     var btn = $('#button-cart').offset();
+                     var cart = $('#cart');
+                     var cart_offset = cart.offset();
+                     $('#button-cart').before('<img src="' + $('#image').attr('src')
+                             + '" id="temp" style="border: 1px solid #F35941;width: 80px; height: 80px; position: absolute; z-index:9999; top: '
+                             + btn.top + 'px; left: ' + btn.left + 'px;" />');
+                     params = {
+                     top : cart_offset.top + 'px',
+                     left : cart_offset.left + 'px',
+                     opacity : 0.0,
+                     width : cart.width(),
+                     height : cart.height()
+                     };
+
+                    params = {
+                    top : cart_offset.top + 'px',
+                    left : cart_offset.left + 'px',
+                    opacity : 1.0,
+                    width : '80px',
+                    height : '80px'
+                    };
+
+
+                     $('#temp').animate(params, 1000, false, function () {
+                     $('#temp').remove();
+                     });
+/* kogan */
+
+
+
+
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+			}
 		}
 	});
 });

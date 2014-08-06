@@ -1,0 +1,78 @@
+<modification>
+	<id><![CDATA[xds_colormarket]]></id>
+	<version><![CDATA[0.3]]></version>
+	<vqmver><![CDATA[2.4.1]]></vqmver>
+	<author><![CDATA[xds]]></author>
+
+    <file name="/catalog/controller/module/featured.php">
+		<operation>
+			<search position="after" error="log"><![CDATA[$this->load->model('tool/image');]]></search>
+			<add><![CDATA[
+				
+				$this->document->addScript('catalog/view/javascript/jquery/jquery.jcarousel.min.js');
+				if (file_exists('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css')) {
+					$this->document->addStyle('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css');
+				} else {
+					$this->document->addStyle('catalog/view/theme/default/stylesheet/carousel.css');
+				}
+				$this->data['button_wishlist'] = $this->language->get('button_wishlist');
+				$this->data['button_compare'] = $this->language->get('button_compare');
+				
+			]]></add>
+		</operation>
+		</file>
+		
+		<file name="/catalog/controller/module/latest.php">
+		<operation>
+			<search position="after" error="log"><![CDATA[$this->load->model('tool/image');]]></search>
+			<add><![CDATA[
+				
+				$this->document->addScript('catalog/view/javascript/jquery/jquery.jcarousel.min.js');
+				if (file_exists('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css')) {
+					$this->document->addStyle('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css');
+				} else {
+					$this->document->addStyle('catalog/view/theme/default/stylesheet/carousel.css');
+				}
+				$this->data['button_wishlist'] = $this->language->get('button_wishlist');
+				$this->data['button_compare'] = $this->language->get('button_compare');
+				
+			]]></add>
+		</operation>
+		</file>
+		
+		<file name="/catalog/controller/module/special.php">
+		<operation>
+			<search position="after" error="log"><![CDATA[$this->load->model('tool/image');]]></search>
+			<add><![CDATA[
+				
+				$this->document->addScript('catalog/view/javascript/jquery/jquery.jcarousel.min.js');
+				if (file_exists('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css')) {
+					$this->document->addStyle('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css');
+				} else {
+					$this->document->addStyle('catalog/view/theme/default/stylesheet/carousel.css');
+				}
+				$this->data['button_wishlist'] = $this->language->get('button_wishlist');
+				$this->data['button_compare'] = $this->language->get('button_compare');
+				
+			]]></add>
+		</operation>
+		</file>
+		
+		<file name="/catalog/controller/module/bestseller.php">
+		<operation>
+			<search position="after" error="log"><![CDATA[$this->load->model('tool/image');]]></search>
+			<add><![CDATA[
+				
+				$this->document->addScript('catalog/view/javascript/jquery/jquery.jcarousel.min.js');
+				if (file_exists('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css')) {
+					$this->document->addStyle('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css');
+				} else {
+					$this->document->addStyle('catalog/view/theme/default/stylesheet/carousel.css');
+				}
+				$this->data['button_wishlist'] = $this->language->get('button_wishlist');
+				$this->data['button_compare'] = $this->language->get('button_compare');
+				
+			]]></add>
+		</operation>
+		</file>
+</modification>
